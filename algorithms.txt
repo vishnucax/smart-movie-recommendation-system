@@ -1,0 +1,19 @@
+AI/ML Algorithms and Techniques Used in Smart Movie Recommendation Web Application:
+
+1. Natural Language Processing (NLP):
+   Text data (like overviews, genres, keywords, cast, and directors) are combined into a single "content" pool. NLP processes this text to prepare it for vectorization.
+
+2. TF-IDF (Term Frequency-Inverse Document Frequency) Vectorization:
+   This is the core ML technique used to turn text data into numerical features.
+   - Term Frequency (TF): Counts how frequently a word appears in a movie's content profile.
+   - Inverse Document Frequency (IDF): Decreases the weight of commonly used words (e.g., "the", "and") across all movies to highlight distinctive terms (e.g., "alien", "heist").
+   Together, TF-IDF represents each movie as an n-dimensional sparse vector.
+
+3. Cosine Similarity (Vector Similarity Algorithm):
+   Used to calculate the mathematical distance between two movie vectors.
+   - A dot product is performed to find the cosine of the angle between two vectors.
+   - An output of 1 indicates exact similarity, and 0 indicates no similarity.
+   - Instead of computing an N x N matrix which consumes massive memory, the dot product (cosine similarity since vectors are L2-normalized by TF-IDF) is computed on the fly between the queried movie and all other movies linearly.
+
+4. Keyword Matching / String Similarity (Heuristic Search):
+   A smart filtering algorithm to identify whether a user's input maps to a specific movie, actor, director, genre, or language prior to computing similarity arrays.
